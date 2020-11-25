@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private  List<Dicionario> listDicionario = new ArrayList<Dicionario>();
     private  List<Dicionario> listDicionarioFiltrado = new ArrayList<Dicionario>();
+    private  List<Dicionario> listVazia = new ArrayList<Dicionario>();
     private ListView listProcura;
     private BancoDeDados mBancoDeDados;
     private ArrayAdapter<Dicionario> ArrayAdapaterDicionario;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-    private Button botaosorteador, botaomostrar, botaoDia, teste;
+    private Button botaosorteador, botaomostrar, botaoDia;
     private TextView palavraAleatoria,palavraDia;
 
     SimpleDateFormat formataData = new SimpleDateFormat("dd-MM-yyyy");
@@ -87,6 +88,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
         });
+        pesquisaPrincipal.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                apagalist();
+                listProcura.clearTextFilter();
+                listProcura.setVisibility(View.INVISIBLE);
+                return false;
+            }
+        });
 
        /* @Override
         public boolean onCreateOptionsMenu(menu menu) {
@@ -96,14 +106,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //return true;
         }*/
 
-        teste=(Button) findViewById(R.id.teste) ;
         palavraAleatoria = (TextView) findViewById(R.id.txtAle);
         botaosorteador = (Button) findViewById(R.id.buttonSorteador);
         botaomostrar = (Button) findViewById(R.id.botaoSigAle);
         botaomostrar.setOnClickListener(this);
         botaosorteador.setOnClickListener(this);
         botaomostrar.setVisibility(View.INVISIBLE);
-        teste.setOnClickListener(this);
+
 
         palavraDia =(TextView) findViewById(R.id.txtDia);
         Random random = new Random();
@@ -140,9 +149,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 listProcura.setVisibility(View.INVISIBLE);*/
                 //String teste = Integer.toString(i);
                 //Toast.makeText(getApplicationContext(),listDicionario.get(10).getPalavra,Toast.LENGTH_LONG).show();
+                apagalist();
                 chamaTela(Palavra, Origem, Descricao);
 
-                //apagalist();
+                apagalist();
 
 
             }
@@ -151,9 +161,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void apagalist(){
-
+        listVazia.clear();
         listDicionarioFiltrado.clear();
-        ArrayAdapaterDicionario = new ArrayAdapter<Dicionario>(this, android.R.layout.simple_expandable_list_item_1, listDicionarioFiltrado);
+        ArrayAdapaterDicionario = new ArrayAdapter<Dicionario>(this, android.R.layout.simple_expandable_list_item_1, listVazia);
         listProcura.setAdapter(ArrayAdapaterDicionario);
         return;
     }
@@ -269,10 +279,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
 
-        if(view.getId() ==R.id.teste){
-            Intent pesquisa = new Intent(this,TelaPesquisa.class);
-            startActivity(pesquisa);
-        }
+
 
 
     }

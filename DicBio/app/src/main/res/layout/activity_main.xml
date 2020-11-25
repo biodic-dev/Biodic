@@ -77,7 +77,7 @@
             <Button
                 android:id="@+id/botaoDia"
                 android:layout_width="160dp"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/aclonica"
                 android:text="Ver significado"
                 android:textSize="14sp" />
@@ -110,7 +110,7 @@
             <Button
                 android:id="@+id/buttonSorteador"
                 android:layout_width="160dp"
-                android:layout_height="35dp"
+                android:layout_height="38dp"
                 android:fontFamily="@font/aclonica"
                 android:text="Sortear Palavra"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -119,19 +119,13 @@
             <Button
                 android:id="@+id/botaoSigAle"
                 android:layout_width="160dp"
-                android:layout_height="34dp"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/aclonica"
                 android:text="Ver significado" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="94dp" />
-
-            <Button
-                android:id="@+id/teste"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="teste" />
+                android:layout_height="79dp" />
 
 
         </LinearLayout>
