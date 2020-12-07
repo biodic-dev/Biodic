@@ -13,7 +13,7 @@ Depois do download pode ser necessário ativar a instalação de aplicativos de 
 
 Screenshots
 ----
-#Tela inicial do app:
+# Tela inicial do app:
 
 ![Screenshot](https://raw.githubusercontent.com/biodic-dev/Biodic/main/.screenshots/inicio.jpg)
 
