@@ -1,7 +1,7 @@
 
 ![](https://raw.githubusercontent.com/biodic-dev/Biodic/main/.screenshots/logo%20do%20if.png)
 
-# BioDic
+# BioDic ![](https://i.imgur.com/fe85aVR.png)
 
 
 BioDic é um dicionario prático de termos biológicos,  contendo uma enorme quantidade de termos gerais de biologia, juntamente com seus significado, se apresentando com uma interface de fácil uso e intuitiva, sendo uma aplicação inclusiva, podendo ser acessado por todos, uma vez que é compatível com leitores de tela, para deficiente visuais. 
